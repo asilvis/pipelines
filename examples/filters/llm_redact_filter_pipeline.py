@@ -90,7 +90,7 @@ class Pipeline:
 
         try:
             r = requests.post(
-                url=f"{self.valves.OPENAI_API_BASE_URL}/api/chat",
+                url=f"{self.valves.OPENAI_API_BASE_URL}/v1/chat/completions",
                 json=payload,
                 headers=headers,
                 stream=False,
