@@ -19,7 +19,7 @@ class Pipeline:
         # The lower the number, the higher the priority.
         priority: int = 0
 
-        OPENAI_API_BASE_URL: str = "http://localhost:11434"
+        OPENAI_API_BASE_URL: str = "http://host.docker.internal:11434"
         OPENAI_API_KEY: str = ""
         TASK_MODEL: str = "llama3:7b"
 
