@@ -80,8 +80,7 @@ class Pipeline:
             "messages": [
                 {
                     "role": "system",
-                    "content": f"""
-                    Você é um assistente de LGPD, sua função é identificar dados sensíveis e substituir por um placeholder.
+                    "content": """Você é um assistente de LGPD, sua função é identificar dados sensíveis e substituir por um placeholder.
 Cada placeholder deve ter uma nomenclatura única e devem ser reaproveitados caso contenham o mesmo valor.
 Não modifique nada no texto fora os placeholders.
 
@@ -149,9 +148,7 @@ Sua resposta em JSON deve respeitar o schema abaixo:
 }
 
 Exemplo de resposta:
-{ "redacted_content": "Meu nome é [NAME_1] e eu nasci em [BIRTH_DATE_1]", "redacted_values": [ { "name": "NAME_1", "value": "André de Lima e Silva" }, { "name": "BIRTH_DATE_1", "value": "07/05/1989" } ] }
-
-                    """,
+{ "redacted_content": "Meu nome é [NAME_1] e eu nasci em [BIRTH_DATE_1]", "redacted_values": [ { "name": "NAME_1", "value": "André de Lima e Silva" }, { "name": "BIRTH_DATE_1", "value": "07/05/1989" } ] }""",
                 },
                 {"role": "user", "content": text},
             ],
