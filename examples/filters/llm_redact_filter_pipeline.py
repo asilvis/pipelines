@@ -196,30 +196,30 @@ Exemplo de resposta:
         body = {**body, "messages": messages}
         return body
 
-    # async def outlet(self, body: dict, user: Optional[dict] = None) -> dict:
-    #     if "title" in body:
-    #         return body
+    async def outlet(self, body: dict, user: Optional[dict] = None) -> dict:
+        if "title" in body:
+            return body
 
-    #     print(f"outlet:{__name__}")
+        print(f"outlet:{__name__}")
 
-    #     messages = body["messages"]
-    #     assistant_message = get_last_assistant_message(messages)
+        messages = body["messages"]
+        assistant_message = get_last_assistant_message(messages)
 
-    #     print(f"Assistant message: {assistant_message}")
+        print(f"Assistant message: {assistant_message}")
 
-    #     # Translate assistant message
-    #     translated_assistant_message = self.translate(
-    #         assistant_message,
-    #         self.valves.source_assistant,
-    #         self.valves.target_assistant,
-    #     )
+        # Translate assistant message
+        # translated_assistant_message = self.translate(
+        #     assistant_message,
+        #     self.valves.source_assistant,
+        #     self.valves.target_assistant,
+        # )
 
-    #     print(f"Translated assistant message: {translated_assistant_message}")
+        # print(f"Translated assistant message: {translated_assistant_message}")
 
-    #     for message in reversed(messages):
-    #         if message["role"] == "assistant":
-    #             message["content"] = translated_assistant_message
-    #             break
+        # for message in reversed(messages):
+        #     if message["role"] == "assistant":
+        #         message["content"] = translated_assistant_message
+        #         break
 
-    #     body = {**body, "messages": messages}
-    #     return body
+        body = {**body, "messages": messages}
+        return body
