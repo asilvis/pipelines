@@ -21,7 +21,7 @@ class Pipeline:
 
         OPENAI_API_BASE_URL: str = "http://host.docker.internal:11434"
         OPENAI_API_KEY: str = ""
-        TASK_MODEL: str = "llama3:7b"
+        TASK_MODEL: str = "llama3:8b"
 
         # Source and target languages
         # User message will be translated from source_user to target_user
@@ -73,7 +73,7 @@ class Pipeline:
 
     def translate(self, text: str, source: str, target: str) -> str:
         headers = {}
-        headers["Authorization"] = f"Bearer {self.valves.OPENAI_API_KEY}"
+        #headers["Authorization"] = f"Bearer {self.valves.OPENAI_API_KEY}"
         headers["Content-Type"] = "application/json"
 
         payload = {
