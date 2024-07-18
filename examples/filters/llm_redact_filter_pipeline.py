@@ -153,6 +153,7 @@ class Pipeline:
                 {"role": "user", "content": text},
             ],
             "model": self.valves.TASK_MODEL,
+            "format": "json",
         }
         print(payload)
 
@@ -162,7 +163,6 @@ class Pipeline:
                 json=payload,
                 headers=headers,
                 stream=False,
-                format="json",
             )
 
             r.raise_for_status()
