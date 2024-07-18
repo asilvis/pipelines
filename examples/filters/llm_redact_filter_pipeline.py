@@ -162,11 +162,12 @@ class Pipeline:
                 json=payload,
                 headers=headers,
                 stream=False,
+                format="json",
             )
 
             r.raise_for_status()
             response = r.json()
-            print(response)
+            print(json.loads(response["choices"][0]["message"]["content"]))
             return response["choices"][0]["message"]["content"]
         except Exception as e:
             return f"Error: {e}"
