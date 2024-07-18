@@ -19,7 +19,7 @@ class Pipeline:
         # The lower the number, the higher the priority.
         priority: int = 0
 
-        OPENAI_API_BASE_URL: str = "http://host.docker.internal:11434/api"
+        OPENAI_API_BASE_URL: str = "http://host.docker.internal:11434"
         OPENAI_API_KEY: str = ""
         TASK_MODEL: str = "llama3:7b"
 
@@ -43,7 +43,7 @@ class Pipeline:
         # The identifier must be unique across all pipelines.
         # The identifier must be an alphanumeric string that can include underscores or hyphens. It cannot contain spaces, special characters, slashes, or backslashes.
         # self.id = "libretranslate_filter_pipeline"
-        self.name = "LLM Redact Filter"
+        self.name = "LLM Redact Filter 2"
 
         # Initialize
         self.valves = self.Valves(
@@ -90,7 +90,7 @@ class Pipeline:
 
         try:
             r = requests.post(
-                url=f"{self.valves.OPENAI_API_BASE_URL}/chat/completions",
+                url=f"{self.valves.OPENAI_API_BASE_URL}/api/chat/completions",
                 json=payload,
                 headers=headers,
                 stream=False,
